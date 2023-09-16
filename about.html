@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="img/32px_Vue.js_Logo_2.svg" />
+    <title>Menu e ristoranti</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="css\style.css" />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <div id="top">
+      <section
+        class="nav-bar"
+        style="background-image: url('img/aboutBackgroundImage.jpeg')"
+      >
+        <nav class="navbar navbar-expand-md fixed-top navbar-dark bg-primary">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+              <img
+                src="img/64px_Vue.js_Logo_2.svg"
+                width="50%"
+                height="50%"
+                alt="Vue.js"
+              />
+            </a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="index.html"
+                    >React</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="issues.html">Problemi con React</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="restaurants.html">
+                    Menu di ristornati letta da json
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="happy-bar-customer.html">
+                    Menu fastfood con carrello
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="about.html">Informazioni</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+        <div class="text-box">
+          <h1>Informazioni</h1>
+          <p>Applicazione realizzata da Edoardo Triossi</p>
+          <a class="hero-btn" href="#document"> Inizio </a>
+        </div>
+        <a class="backward" href="#top">
+          <i class="bi bi-box-arrow-up"></i>
+        </a>
+      </section>
+    </div>
+
+    <a id="document"></a>
+
+    <!-- Application start -->
+
+    <section class="document">
+      <h1>React</h1>
+      <p>
+        Caratteristiche principali del framework con un occhio di riguardo alle
+        differenze con Vue.js
+      </p>
+      <h1>Problemi comuni</h1>
+      <p>
+        Alcuni dei problemi comuni a chi inizia ad usare React e che in qualche
+        caso ho anche sperimentato
+      </p>
+      <h1>Lista di ristoranti e relativi menu</h1>
+      <p>
+        Leggendo il file json contenente una lista di ristoranti e relativi menu
+        ed utilizzando bootstrap, ho visualizzato i dati utilizzando un
+        accordion e tabelle per rappresentare la gerarchia delle informazioni.
+      </p>
+      <h1>Visualizzazione Menu e gestione ordine con carrello</h1>
+      <p>
+        Manipolazione dei dati presenti nel carrello delle ordinazioni mediante
+        selezione dei prodotti da menu e modifica delle quantità nel carrello
+        stesso.
+      </p>
+    </section>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "title": "Tai Shrimps",
+    "image": "img/Tai Shrimps.jpeg",
+    "ingredientsIT": "Gamberi, Spaghetti di soia o di riso, Brodo di pesce granulare, Cipollotti, Fetta di peperone rosso, Scorza di lime, Brodo vegetale, Zenzero grattugiato, Curry rosso in polvere, Zucchero di canna, Salsa di soia, Germogli di soia, Spinacino, Latte di cocco",
+    "price": 12
+  },
+  {
+    "id": 2,
+    "title": "Big burgher",
+    "image": "img/Big burgher.jpeg",
+    "ingredientsIT": "Carne tritata di ottima qualità, fette di bacon, fette di provola affumicata, avocado maturo, mais, uova, panini morbidi, insalata, pepe nero, sale",
+    "price": 15
+  },
+  {
+    "id": 3,
+    "title": "Royal Chicken Taco",
+    "image": "img/Royal Chicken Taco.jpeg",
+    "ingredientsIT": "Petto di pollo, cucchiai di fagioli neri, cucchiai di salsa chili, cipolla dorata, peperone rosso, formaggio cheddar, mix di spezie per tacos a vostro gusto",
+    "price": 9
+  },
+  {
+    "id": 4,
+    "title": "Sliced beef",
+    "image": "img/Sliced beef.jpeg",
+    "ingredientsIT": "Fettine di bovino, Olio di oliva extravergine, Burro, Aglio, Sale, Limone, Alloro secco",
+    "price": 25
+  },
+  {
+    "id": 5,
+    "title": "Pumpkin cream",
+    "image": "img/Pumpkin cream.jpeg",
+    "ingredientsIT": "Zucca, patate, brodo vegetale, olio extravergine, scalogno, cannella, noce moscata, rosmarino, sale, pepe nero, fette di pane in cassetta + olio extravergine",
+    "price": 8
+  },
+  {
+    "id": 6,
+    "title": "Meat soup",
+    "image": "img/Meat soup.jpeg",
+    "ingredientsIT": "Macinato di bovino, patate, conserva di pomodoro, carote, sedano, cipolle, brodo di carne mista, farina di grano tenero, peperoncini piccanti, burro, pepe, Olio extravergine",
+    "price": 12
+  }
+]

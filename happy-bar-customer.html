@@ -110,13 +110,28 @@
       <!-- Products -->
       <section class="document">
         <div class="row g-5">
-          <div v-for="dish in menu" class="col-sm-4">
+          <div
+            v-for="dish in menu"
+            class="col-lg-4 mb-3 d-flex align-items-stretch"
+          >
             <div class="card">
               <img :src="dish.image" class="card-img-top" alt="..." />
               <div class="card-body">
                 <h4 class="card-title">{{dish.title}}</h4>
                 <p class="card-text">Ingredienti: {{dish.ingredientsIT}}</p>
-                <a href="#" class="btn btn-primary">Ordinare</a>
+                <!-- <a class="btn btn-primary" @click="setOrder(dish.title)"
+                  >Ordinare</a
+                > -->
+                <button
+                  class="btn btn-primary"
+                  type="button"
+                  data-bs-toggle="offcanvas"
+                  data-bs-target="#order"
+                  aria-controls="order"
+                  @click="setOrder(dish.title)"
+                >
+                  Ordinare
+                </button>
               </div>
             </div>
           </div>
@@ -242,13 +257,17 @@
     <script>
       const app = Vue.createApp({
         data() {
-          return { menu: [] };
+          return { menu: [], order: {} };
         },
         methods: {
-          getAutori: function () {
+          getAutori() {
             axios.get("./db.json").then((response) => {
               this.menu = response.data;
             });
+          },
+          setOrder(name) {
+            if (!this.order[name]) this.order[name] = 1;
+            console.log(name);
           },
         },
         mounted() {

@@ -111,7 +111,8 @@
       <section class="document">
         <div class="row g-5">
           <div
-            v-for="dish in menu"
+            v-for="(dish, i) in menu"
+            :key="i"
             class="col-lg-4 mb-3 d-flex align-items-stretch"
           >
             <div class="card">
@@ -170,56 +171,12 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
+              <tr v-for="(value, key, index) in order" :key="index">
                 <th scope="row">1</th>
-                <td>Panino al salame</td>
-                <td>1,00€</td>
-                <td>1</td>
-                <td>1,00€</td>
-                <td>
-                  <button type="button" class="btn btn-primary btn-sm">
-                    +
-                  </button>
-                </td>
-                <td>
-                  <button type="button" class="btn btn-secondary btn-sm">
-                    -
-                  </button>
-                </td>
-                <td>
-                  <button type="button" class="btn btn-warning btn-sm">
-                    x
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Panino al prosciutto</td>
-                <td>2,00€</td>
-                <td>1</td>
-                <td>2,00€</td>
-                <td>
-                  <button type="button" class="btn btn-primary btn-sm">
-                    +
-                  </button>
-                </td>
-                <td>
-                  <button type="button" class="btn btn-secondary btn-sm">
-                    -
-                  </button>
-                </td>
-                <td>
-                  <button type="button" class="btn btn-warning btn-sm">
-                    x
-                  </button>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Panino alla mortadella</td>
-                <td>3,00€</td>
-                <td>1</td>
-                <td>3,00€</td>
+                <td>{{key}}</td>
+                <td>{{getPrice(key)}}€</td>
+                <td>{{value}}</td>
+                <td>{{getTotal(key, value)}}€</td>
                 <td>
                   <button type="button" class="btn btn-primary btn-sm">
                     +
@@ -238,7 +195,7 @@
               </tr>
             </tbody>
           </table>
-          <p>Totale: 6,00€</p>
+          <p>Totale:{{getTotalOrder()}}€</p>
         </div>
       </div>
     </div>
@@ -267,7 +224,25 @@
           },
           setOrder(name) {
             if (!this.order[name]) this.order[name] = 1;
-            console.log(name);
+          },
+          getPrice(name) {
+            const dish = this.menu.find((d) => {
+              return d.title === name;
+            });
+            return dish.price;
+          },
+          getTotal(name, value) {
+            return this.getPrice(name) * value;
+          },
+          getTotalOrder() {
+            if (Object.entries(this.order).length === 0) return 0;
+            const total = Object.entries(this.order).reduce(
+              (acc, curr, index) => {
+                return acc + curr[1] * this.getPrice(curr[0]);
+              },
+              0
+            );
+            return total;
           },
         },
         mounted() {

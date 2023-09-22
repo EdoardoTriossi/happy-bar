@@ -172,23 +172,35 @@
             </thead>
             <tbody>
               <tr v-for="(value, key, index) in order" :key="index">
-                <th scope="row">1</th>
+                <th scope="row">{{index + 1}}</th>
                 <td>{{key}}</td>
                 <td>{{getPrice(key)}}€</td>
                 <td>{{value}}</td>
                 <td>{{getTotal(key, value)}}€</td>
                 <td>
-                  <button type="button" class="btn btn-primary btn-sm">
+                  <button
+                    @click="addDish(key)"
+                    type="button"
+                    class="btn btn-primary btn-sm"
+                  >
                     +
                   </button>
                 </td>
                 <td>
-                  <button type="button" class="btn btn-secondary btn-sm">
+                  <button
+                    @click="removeDish(key)"
+                    type="button"
+                    class="btn btn-secondary btn-sm"
+                  >
                     -
                   </button>
                 </td>
                 <td>
-                  <button type="button" class="btn btn-warning btn-sm">
+                  <button
+                    @click="deleteDish(key)"
+                    type="button"
+                    class="btn btn-warning btn-sm"
+                  >
                     x
                   </button>
                 </td>
@@ -217,7 +229,7 @@
           return { menu: [], order: {} };
         },
         methods: {
-          getAutori() {
+          getMenu() {
             axios.get("./db.json").then((response) => {
               this.menu = response.data;
             });
@@ -244,9 +256,20 @@
             );
             return total;
           },
+          addDish(name) {
+            // console.log(this.order[name]);
+            this.order[name]++;
+          },
+          removeDish(name) {
+            // console.log = this.order.value;
+            if (this.order[name] > 1) this.order[name]--;
+          },
+          deleteDish(name) {
+            delete this.order[name];
+          },
         },
         mounted() {
-          this.getAutori();
+          this.getMenu();
         },
       });
       app.mount("#app");

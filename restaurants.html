@@ -18,441 +18,156 @@
   </head>
 
   <body>
-    <!-- Navigation -->
-    <div id="top">
-      <section
-        class="nav-bar"
-        style="background-image: url('img/restaurantsBackgroundImage.jpeg')"
-      >
-        <nav class="navbar navbar-expand-md fixed-top navbar-dark bg-primary">
-          <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">
-              <img
-                src="img/64px_Vue.js_Logo_2.svg"
-                width="50%"
-                height="50%"
-                alt="Vue.js"
-              />
-            </a>
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
+    <div id="app">
+      <!-- Navigation -->
+      <div id="top">
+        <section
+          class="nav-bar"
+          style="background-image: url('img/restaurantsBackgroundImage.jpeg')"
+        >
+          <nav class="navbar navbar-expand-md fixed-top navbar-dark bg-primary">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="index.html">
+                <img
+                  src="img/64px_Vue.js_Logo_2.svg"
+                  width="50%"
+                  height="50%"
+                  alt="Vue.js"
+                />
+              </a>
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="index.html"
+                      >React</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="issues.html"
+                      >Problemi con React</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="restaurants.html">
+                      Menu di ristornati letta da json
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="happy-bar-customer.html">
+                      Menu fastfood con carrello
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="about.html">Informazioni</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+
+          <div class="text-box">
+            <h1>Elenco di ristoranti e loro menu</h1>
+            <p>Il tutto letto da un file json</p>
+            <a class="hero-btn" href="#document"> Inizio </a>
+          </div>
+          <a class="backward" href="#top">
+            <i class="bi bi-arrow-up-circle-fill"></i>
+          </a>
+        </section>
+      </div>
+
+      <a id="document"></a>
+
+      <!-- Application start -->
+      <section class="document">
+        <div class="accordion" id="restaurants">
+          <div v-for="(menu, i) in menus" :key="i" class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                :data-bs-target="`#collapse${i}`"
+                aria-expanded="false"
+                :aria-controls="`collapse${i}`"
+              >
+                {{menu.name}}
+              </button>
+            </h2>
+            <div
+              :id="`collapse${i}`"
+              class="accordion-collapse collapse"
+              data-bs-parent="#restaurants"
             >
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                  <a class="nav-link" aria-current="page" href="index.html"
-                    >React</a
-                  >
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="issues.html">Problemi con React</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="restaurants.html">
-                    Menu di ristornati letta da json
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="happy-bar-customer.html">
-                    Menu fastfood con carrello
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="about.html">Informazioni</a>
-                </li>
-              </ul>
+              <div class="accordion-body">
+                <div v-for="(item, j) in menu.entries.items" :key="j">
+                  <div v-for="(subMenu, k) in item.entries.items" :key="k">
+                    <h1>{{subMenu.name}}</h1>
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th scope="col">#</th>
+                          <th scope="col">Name</th>
+                          <th scope="col">Description</th>
+                          <th scope="col">Price</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr v-for="(dish, f) in subMenu.entries.items" :key="f">
+                          <th scope="row">{{f+1}}</th>
+                          <td>{{dish.name}}</td>
+                          <td>{{dish.description}}</td>
+                          <td>{{dish.price}}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </nav>
-
-        <div class="text-box">
-          <h1>Elenco di ristoranti e loro menu</h1>
-          <p>Il tutto letto da un file json</p>
-          <a class="hero-btn" href="#document"> Inizio </a>
         </div>
-        <a class="backward" href="#top">
-          <i class="bi bi-arrow-up-circle-fill"></i>
-        </a>
       </section>
     </div>
 
-    <a id="document"></a>
-
-    <!-- Application start -->
-    <section class="document">
-      <div class="accordion" id="restaurants">
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button
-              class="accordion-button collapsed"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapse1"
-              aria-expanded="false"
-              aria-controls="collapse1"
-            >
-              7-spices-carribean-restaurant-new-york
-            </button>
-          </h2>
-          <div
-            id="collapse1"
-            class="accordion-collapse collapse"
-            data-bs-parent="#restaurants"
-          >
-            <div class="accordion-body">
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Description</th>
-                    <th scope="col">Price</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Jerk Chicken</td>
-                    <td>with Macaroni and Chees</td>
-                    <td>$10.00</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Goat</td>
-                    <td>with Vegetables, Macaroni and Chees</td>
-                    <td>$12.00</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td>Pasta</td>
-                    <td>with Baked Chicke</td>
-                    <td>$9.00</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">4</th>
-                    <td>Oxtail</td>
-                    <td></td>
-                    <td>$13.00</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button
-              class="accordion-button collapsed"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapse2"
-              aria-expanded="false"
-              aria-controls="collapse2"
-            >
-              7-spices-carribean-restaurant-new-york
-            </button>
-          </h2>
-          <div
-            id="collapse2"
-            class="accordion-collapse collapse"
-            data-bs-parent="#restaurants"
-          >
-            <div class="accordion-body">
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Description</th>
-                    <th scope="col">Price</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Jerk Chicken</td>
-                    <td>with Macaroni and Chees</td>
-                    <td>$10.00</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Goat</td>
-                    <td>with Vegetables, Macaroni and Chees</td>
-                    <td>$12.00</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td>Pasta</td>
-                    <td>with Baked Chicke</td>
-                    <td>$9.00</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">4</th>
-                    <td>Oxtail</td>
-                    <td></td>
-                    <td>$13.00</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button
-              class="accordion-button collapsed"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapse3"
-              aria-expanded="false"
-              aria-controls="collapse3"
-            >
-              7-spices-carribean-restaurant-new-york
-            </button>
-          </h2>
-          <div
-            id="collapse3"
-            class="accordion-collapse collapse"
-            data-bs-parent="#restaurants"
-          >
-            <div class="accordion-body">
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Description</th>
-                    <th scope="col">Price</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Jerk Chicken</td>
-                    <td>with Macaroni and Chees</td>
-                    <td>$10.00</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Goat</td>
-                    <td>with Vegetables, Macaroni and Chees</td>
-                    <td>$12.00</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td>Pasta</td>
-                    <td>with Baked Chicke</td>
-                    <td>$9.00</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">4</th>
-                    <td>Oxtail</td>
-                    <td></td>
-                    <td>$13.00</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button
-              class="accordion-button collapsed"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapse4"
-              aria-expanded="false"
-              aria-controls="collapse4"
-            >
-              7-spices-carribean-restaurant-new-york
-            </button>
-          </h2>
-          <div
-            id="collapse4"
-            class="accordion-collapse collapse"
-            data-bs-parent="#restaurants"
-          >
-            <div class="accordion-body">
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Description</th>
-                    <th scope="col">Price</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Jerk Chicken</td>
-                    <td>with Macaroni and Chees</td>
-                    <td>$10.00</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Goat</td>
-                    <td>with Vegetables, Macaroni and Chees</td>
-                    <td>$12.00</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td>Pasta</td>
-                    <td>with Baked Chicke</td>
-                    <td>$9.00</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">4</th>
-                    <td>Oxtail</td>
-                    <td></td>
-                    <td>$13.00</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button
-              class="accordion-button collapsed"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapse5"
-              aria-expanded="false"
-              aria-controls="collapse5"
-            >
-              7-spices-carribean-restaurant-new-york
-            </button>
-          </h2>
-          <div
-            id="collapse5"
-            class="accordion-collapse collapse"
-            data-bs-parent="#restaurants"
-          >
-            <div class="accordion-body">
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Description</th>
-                    <th scope="col">Price</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Jerk Chicken</td>
-                    <td>with Macaroni and Chees</td>
-                    <td>$10.00</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Goat</td>
-                    <td>with Vegetables, Macaroni and Chees</td>
-                    <td>$12.00</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td>Pasta</td>
-                    <td>with Baked Chicke</td>
-                    <td>$9.00</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">4</th>
-                    <td>Oxtail</td>
-                    <td></td>
-                    <td>$13.00</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button
-              class="accordion-button collapsed"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapse6"
-              aria-expanded="false"
-              aria-controls="collapse6"
-            >
-              7-spices-carribean-restaurant-new-york
-            </button>
-          </h2>
-          <div
-            id="collapse6"
-            class="accordion-collapse collapse"
-            data-bs-parent="#restaurants"
-          >
-            <div class="accordion-body">
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Description</th>
-                    <th scope="col">Price</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Jerk Chicken</td>
-                    <td>with Macaroni and Chees</td>
-                    <td>$10.00</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Goat</td>
-                    <td>with Vegetables, Macaroni and Chees</td>
-                    <td>$12.00</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td>Pasta</td>
-                    <td>with Baked Chicke</td>
-                    <td>$9.00</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">4</th>
-                    <td>Oxtail</td>
-                    <td></td>
-                    <td>$13.00</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <!-- code -->
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
       crossorigin="anonymous"
     ></script>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="https://unpkg.com/vue-router@4"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script>
-      function getMenu() {
-        axios.get("restaurants.json").then((response) => {
-          return response.data;
-        });
-      }
-      let restaurants = getMenu();
+      const app = Vue.createApp({
+        data() {
+          return { menus: [] };
+        },
+        methods: {
+          getMenus() {
+            axios.get("./restaurants.json").then((response) => {
+              this.menus = response.data;
+            });
+          },
+        },
+        mounted() {
+          this.getMenus();
+        },
+      });
+      app.mount("#app");
     </script>
   </body>
 </html>

@@ -1,220 +1,59 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="img/32px_Vue.js_Logo_2.svg" />
-    <title>Menu e ristoranti</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
-    />
+    <title>React un framework per applicazioni WEB</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
     <link rel="stylesheet" href="css\style.css" />
   </head>
 
   <body>
     <!-- Navigation -->
-    <div id="top">
-      <section
-        class="nav-bar"
-        style="background-image: url('img/homeBackgroundImage.jpeg')"
-      >
-        <nav class="navbar navbar-expand-md fixed-top navbar-dark bg-primary">
-          <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">
-              <img
-                src="img/64px_Vue.js_Logo_2.svg"
-                width="50%"
-                height="50%"
-                alt="Vue.js"
-              />
-            </a>
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                  <a class="nav-link" aria-current="page" href="index.html"
-                    >React</a
-                  >
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="issues.html">Problemi con React</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="restaurants.html">
-                    Menu di ristornati letta da json
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="happy-bar-customer.html">
-                    Menu fastfood con carrello
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="about.html">Informazioni</a>
-                </li>
-              </ul>
-            </div>
+    <div id="app" v-cloak>
+      <a id="top"></a>
+
+      <nav class="navbar navbar-expand-md fixed-top navbar-dark bg-primary">
+        <div class="container-fluid">
+          <li class="nav-item">
+            <router-link class="nav-link" to="/"><img src="img/64px_Vue.js_Logo_2.svg" alt="Vue.js" /></router-link>
+          </li>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item"><router-link class="nav-link" to="/">React</router-link></li>
+              <li class="nav-item"><router-link class="nav-link" to="/issues">Problemi con React</router-link></li>
+              <li class="nav-item"><router-link class="nav-link" to="/restaurants"> Menu di ristornati letta da json </router-link></li>
+              <li class="nav-item"><router-link class="nav-link" to="/happyBar"> Menu fastfood con carrello </router-link></li>
+              <li class="nav-item"><router-link class="nav-link" to="/about">Informazioni</router-link></li>
+              <li class="nav-item" id="cart" style="display: none">
+                <button class="btn btn-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#order" aria-controls="order"><i class="bi bi-cart"></i> Ordine</button>
+              </li>
+            </ul>
           </div>
-        </nav>
-
-        <div class="text-box">
-          <h1>React</h1>
-          <p>Un framework per applicazioni web molto diffuso</p>
-          <a class="hero-btn" href="#document"> Inizio </a>
         </div>
-        <a class="backward" href="#top">
-          <i class="bi bi-arrow-up-circle-fill"></i>
-        </a>
-      </section>
-    </div>
+      </nav>
 
-    <a id="document"></a>
+      <a id="document"></a>
+
+      <main>
+        <router-view></router-view>
+      </main>
+      <footer>
+        <p>Triossi Edoardo - A.A. 2022/2023</p>
+      </footer>
+    </div>
 
     <!-- Application start -->
 
-    <section class="document">
-      <h1>Why use a framework</h1>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. At aut quo eos
-        dicta ex? Dignissimos natus minima, quos similique consectetur dolorem
-        inventore. Commodi fugit maxime numquam eum consequuntur dolorum nemo.
-      </p>
-
-      <div class="row">
-        <div class="col">
-          <h3>Avoid to reinvent the weel</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque eius
-            quas veniam minus, unde sed, ipsam dignissimos vel temporibus minima
-            neque ipsa assumenda quo laborum odio, asperiores voluptas iure
-            quia!
-          </p>
-        </div>
-        <div class="col">
-          <h3>Help the development</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque eius
-            quas veniam minus, unde sed, ipsam dignissimos vel temporibus minima
-            neque ipsa assumenda quo laborum odio, asperiores voluptas iure
-            quia!
-          </p>
-        </div>
-        <div class="col">
-          <h3>Use standard ways to implement applications</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque eius
-            quas veniam minus, unde sed, ipsam dignissimos vel temporibus minima
-            neque ipsa assumenda quo laborum odio, asperiores voluptas iure
-            quia!
-          </p>
-        </div>
-        <div class="col">
-          <h3>Be ready to join a project using the same framework</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque eius
-            quas veniam minus, unde sed, ipsam dignissimos vel temporibus minima
-            neque ipsa assumenda quo laborum odio, asperiores voluptas iure
-            quia!
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="document">
-      <h1>Most popular frameworks</h1>
-      <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro dicta
-        quis id magni harum non omnis, blanditiis, dolorem, delectus
-        necessitatibus exercitationem nisi ut. Aspernatur, mollitia tenetur!
-        Aliquam magnam error facilis.
-      </p>
-      <div class="row">
-        <a href="https://github.com/facebook/react" class="img-col">
-          <img src="img/react-logo.png" alt="React" />
-          <div class="layer">
-            <h3>React</h3>
-          </div>
-        </a>
-        <a href="https://github.com/angular/angular" class="img-col">
-          <img src="img/angular-logo.png" alt="Angular" />
-          <div class="layer">
-            <h3>Angular</h3>
-          </div>
-        </a>
-        <a href="https://github.com/vuejs/vue" class="img-col">
-          <img src="img/vue-js-logo.png" alt="Vue" />
-          <div class="layer">
-            <h3>Vue</h3>
-          </div>
-        </a>
-      </div>
-    </section>
-
-    <section class="document">
-      <h1>Frameworks popularity</h1>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam iure,
-        laboriosam molestiae, id voluptas, fuga ipsam accusamus quaerat ratione
-        adipisci ex architecto provident ad neque porro illo praesentium libero
-        recusandae?
-      </p>
-      <div class="row">
-        <div class="centerImage">
-          <h2>Google trends</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam
-            iure, laboriosam molestiae, id voluptas, fuga ipsam accusamus
-            quaerat ratione adipisci ex architecto provident ad neque porro illo
-            praesentium libero recusandae?
-          </p>
-          <a
-            href="https://trends.google.it/trends/explore?date=today%2012-m,today%2012-m,today%2012-m&geo=,,&q=%2Fm%2F012l1vxv,%2Fg%2F11c6w0ddw9,%2Fg%2F11c0vmgx5d"
-          >
-            <img
-              src="img/google-trends.png"
-              alt="Google trends on js frameworks"
-            />
-          </a>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="centerImage">
-          <h2>Stack Overflow Trends</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam
-            iure, laboriosam molestiae, id voluptas, fuga ipsam accusamus
-            quaerat ratione adipisci ex architecto provident ad neque porro illo
-            praesentium libero recusandae?
-          </p>
-          <a
-            href="https://insights.stackoverflow.com/trends?tags=reactjs%2Cangular%2Cvue.js"
-          >
-            <img src="img/reactjs-angular-vue.js.svg" alt="" />
-          </a>
-        </div>
-      </div>
-    </section>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="https://unpkg.com/vue-router@4"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="index.js"></script>
   </body>
 </html>

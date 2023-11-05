@@ -41,8 +41,582 @@
       <a id="document"></a>
 
       <main>
-        <router-view></router-view>
+        <section class="document">
+          <h1>The Evolution and Impact of React in Modern Web Development. </h1>
+    
+          <div class="row">
+            <div class="col">
+              <p>
+                In the rapidly evolving landscape of web development, React has emerged as a groundbreaking technology that has revolutionized the way websites and applications are built and maintained. Developed by Facebook, React has gained immense popularity since its inception in 2013, and its innovative approach to building user interfaces has influenced the entire web development community.
+              </p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <p>
+                The Birth of React and Its Core Concepts:
+                React was born out of the need to simplify the process of developing complex user interfaces. It introduced the concept of reusable components, enabling developers to break down the user interface into smaller, manageable pieces. The Virtual DOM (Document Object Model) was another crucial innovation, allowing React to efficiently update only the necessary parts of a webpage when data changes, minimizing the need for full-page reloads.
+              </p>
+            </div>
+            <div class="col">
+              <p>
+                Declarative and Component-Based Development:
+                One of React's fundamental principles is its declarative nature. Developers describe what the UI should look like at any given time, and React takes care of updating the actual UI to match the desired state. This approach simplifies development by abstracting away the intricacies of manual DOM manipulation.
+              </p>
+            </div>
+            <div class="col">
+              <p>
+                The component-based architecture offered by React promotes reusability and modularity. Developers can create encapsulated components that manage their own state and can be easily combined to create complex interfaces. This encourages a more organized and maintainable codebase.
+              </p>
+            </div>
+            <div class="col">
+              <p>
+                Flux Architecture and State Management:
+                React introduced the Flux architecture pattern, which influenced the development of state management libraries like Redux. Managing application state can become challenging as applications grow in complexity. React's one-way data flow in combination with state management libraries has proven effective in maintaining a predictable and easily debuggable state.              </p>
+            </div>
+            <div class="col">
+              <p>
+                The Rise of React Ecosystem:
+                React's popularity spurred the growth of a rich ecosystem of tools and libraries. React Router for handling navigation, Styled Components for component-oriented styling, and Axios for making API requests are just a few examples. The availability of these tools streamlines development and maintains a high level of consistency across projects.              </p>
+            </div>
+            <div class="col">
+              <p>
+                React Native and Cross-Platform Development:
+                React's influence expanded beyond the web with the introduction of React Native. This framework enables developers to build native mobile applications using the same principles of component-based development. By sharing a significant portion of code between web and mobile platforms, React Native enhances efficiency and reduces development time.              </p>
+            </div>
+            <div class="col">
+              <p>
+                Challenges and Adaptations:
+                While React has brought numerous benefits to web development, it's not without its challenges. Learning React and its ecosystem can be daunting for beginners due to the rapid pace of change and the array of concepts to grasp. Additionally, managing state in larger applications can become complex, leading to the adoption of more advanced state management solutions.              </p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <p>
+                JSX (JavaScript XML) is a syntax extension used in React that allows you to write HTML-like code within your JavaScript code. It's a fundamental part of React's component-based architecture, making it easier to describe the structure of your user interfaces.
+
+                JSX Structure:
+                In JSX, you can write HTML-like elements directly in your JavaScript code. These elements are transformed into React elements during the compilation process. JSX syntax closely resembles HTML, but there are a few differences and rules to keep in mind:
+              </p>
+            </div>
+          </div>
+
+          <h2>React JSX Structure and Example:</h2>
+
+          <div class="row">
+            <div class="col">
+              <p>
+                JSX (JavaScript XML) is a syntax extension used in React that allows you to write HTML-like code within your JavaScript code. It's a fundamental part of React's component-based architecture, making it easier to describe the structure of your user interfaces.
+
+              </p>
+            </div>
+            <div class="col">
+              <p>
+                JSX Structure:
+                In JSX, you can write HTML-like elements directly in your JavaScript code. These elements are transformed into React elements during the compilation process. JSX syntax closely resembles HTML, but there are a few differences and rules to keep in mind:
+              </p>
+            </div>
+            <div class="col">
+              <p>
+                JSX elements must have a single root element. You cannot have adjacent root elements at the same level.
+                HTML attributes are named using camelCase instead of kebab-case (e.g., className instead of class).
+                You can embed JavaScript expressions within curly braces {}.
+              </p>
+            </div>        
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <p>
+                Example:
+                Let's create a simple React component using JSX. We'll create a HelloWorld component that displays a greeting message.
+              </p>
+            </div>
+            <div class="col">
+              <div class="code">
+                import React from "react";
+
+                // Defining a functional component using JSX
+                function HelloWorld() {
+                  const name = "John";
+                  const greeting = "Hello,";
+
+                  return (
+                    <div>
+                      <h1>
+                        {greeting} {name}!
+                      </h1>
+                      <p>This is a simple React JSX example.</p>
+                    </div>
+                  );
+                }
+
+                export default HelloWorld;
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <p>
+                In this example:
+
+                We import the React library because JSX gets transformed into React.createElement() calls.
+                The HelloWorld component is defined as a function.
+                Inside the return statement, we use JSX to create the user interface elements. The curly braces {} allow us to insert dynamic content (JavaScript expressions) into the JSX.
+                The JSX syntax allows us to write the HTML-like structure directly within the component's code.
+            
+                When this component is rendered, it will produce HTML similar to:
+              </p>
+            </div>
+            <div class="col">
+              <div class="code">
+                <h1>Hello, John!</h1>
+                <p>This is a simple React JSX example.</p>
+              </div>
+            </div>
+            <div class="col">
+              <p>
+                Remember that JSX needs to be compiled before it can be used in the browser. This compilation step is typically handled by tools like Babel, which convert JSX into standard JavaScript code that the browser can understand.
+
+                Overall, JSX simplifies the process of creating and managing user interfaces in React by allowing developers to express UI elements more naturally within their JavaScript code.
+              </p>
+            </div>
+          </div>
+
+          <h2>React component structure</h2>
+
+          <div class="row">
+            <div class="col">
+              <p>
+                The structure of a React component involves organizing its code and related files in a way that promotes clarity, modularity, and maintainability. While there isn't a strict rule on how to structure a React component, there are common practices that many developers follow. Here's a recommended component structure:
+              </p>
+            </div>
+            <div class="col">
+              <ul>
+                <li> ComponentName.js # Main component code</li>
+                <li> ComponentName.css # Component-specific styles (optional)</li>
+                <li> ComponentName.test.js # Component tests (optional)</li>
+                <li> index.js # Exports the component for easier imports</li>
+                <li> README.md # Component documentation (optional)</li>
+              </ul>
+            </div>
+            <div class="col">
+              <p>
+                ComponentName.js: This is the main file that contains the component's code. It should define the component's functionality, rendering logic, and any associated state and props.
+              </p>
+            </div>
+            <div class="col">
+              <p>
+                ComponentName.css (optional): If your component requires specific styles, you can create a separate CSS file for it. This helps keep styles modular and easier to manage. You might also consider using CSS-in-JS solutions or CSS modules.
+              </p>
+            </div>
+            <div class="col">
+              <p>
+                ComponentName.test.js (optional): If you're following test-driven development or simply want to ensure your component behaves as expected, you can create test files using testing frameworks like Jest and React Testing Library.
+              </p>
+            </div>
+            <div class="col">
+              <p>
+                index.js: This file is used to export the component, making it easier to import in other parts of your application. It allows you to use named imports and simplifies the import path.
+              </p>
+            </div>
+            <div class="col">
+              <p>
+                README.md (optional): Writing a brief description of the component's purpose, usage, and any important notes in a README can be helpful for you and other developers who might use the component.
+              </p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <p>
+                Example:
+
+                Let's create a simple Button component structure following the above conventions:
+              </p>
+            </div>
+            <div class="col">
+              <ul>
+                <li>Button.js</li>
+                <li>Button.css</li>
+                <li>Button.test.js</li>
+                <li>index.js</li>
+              </ul>
+            </div>
+            <div class="col">
+              <p>Button.js:</p>
+              <div class="code">
+                import React from "react";
+                import "./Button.css";
+                
+                function Button(props) {
+                  const { label, onClick } = props;
+                
+                  return (
+                    <button className="button" onClick={onClick}>
+                      {label}
+                    </button>
+                  );
+                }
+                
+                export default Button;
+              </div>
+            </div>
+            <div class="col">
+              <p>Button.css:</p>
+              <div class="code">
+                .button {
+                  padding: 10px 20px;
+                  background-color: #007bff;
+                  color: #ffffff;
+                  border: none;
+                  cursor: pointer;
+                }
+              </div>
+            </div>
+            <div class="col">
+              <p>index.js:</p>
+              <div class="code">
+                import Button from "./Button";
+
+                export default Button;
+              </div>
+            </div>
+            <div class="col">
+              <p>Now, you can easily import the Button component using:</p>
+              <div class="code">
+                import Button from "./Button";
+              </div>
+            </div>
+            <div class="col">
+              <p>
+                By adhering to a consistent component structure, you can ensure that your code remains organized, maintainable, and easy to work with as your application grows.
+              </p>
+            </div>
+
+          </div>
+
+          <h2>React how to compose components</h2>
+
+          <div class="row">
+            <div class="col">
+              <p>
+                Composing components in React involves combining smaller, reusable components together to create a larger, more complex user interface. This is achieved by rendering child components within parent components' JSX. Here's a step-by-step guide on how to compose components in React:
+              </p>
+            </div>
+            <div class="col">
+              <p>
+                Create Reusable Components:
+                Start by creating individual components that encapsulate specific pieces of UI or functionality. Each component should ideally have a single responsibility. This promotes reusability and maintainability.              </p>
+            </div>
+            <div class="col">
+              <p>
+                Nest Components in JSX:
+                To compose components, you can render child components within the JSX of a parent component. Simply use the child component's name as if it were an HTML element within the parent component's JSX.
+              </p>
+            </div>
+            <div class="col">
+              <p>
+                Pass Data with Props:
+                To make composed components more dynamic, you can pass data from parent to child components using props (properties). Props allow you to send information to child components, enabling them to render based on the provided data.
+              </p>
+            </div>
+            <div class="col">
+              <p>
+                Example of Composing Components:
+
+                Let's illustrate the process with a simple example. Suppose you have a User component that displays information about a user and a UserProfile component that uses the User component to display user profiles.              </p>
+            </div>
+            <div class="col">
+              <div class="code">
+                // User.js
+                import React from 'react';
+
+                function User(props) {
+                return (
+                <div className="user">
+                <h3>{props.name}</h3>
+                <p>Email: {props.email}</p>
+                </div>
+                );
+                }
+
+                export default User;
+
+                // UserProfile.js
+                import React from 'react';
+                import User from './User';
+
+                function UserProfile() {
+                return (
+                <div className="user-profile">
+                <h2>User Profile</h2>
+                <User name="John Doe" email="john@example.com" />
+                </div>
+                );
+                }
+
+                export default UserProfile;
+              </div>
+            </div>
+            <div class="col">
+              <p>
+                In this example:
+
+                The User component displays user information based on the props it receives.
+                The UserProfile component is a parent component that composes the User component to create a user profile page.
+              </p>
+            </div>
+            <div class="col">
+              <p>
+                When you use the UserProfile component in your application, it will render the User component within it:
+              </p>
+            </div>
+            <div class="col">
+              <div class="code">
+                // App.js
+                import React from "react";
+                import UserProfile from "./UserProfile";
+
+                function App() {
+                  return (
+                    <div className="app">
+                      <UserProfile />
+                    </div>
+                  );
+                }
+
+                export default App;
+
+              </div>
+            </div>
+            <div class="col">
+              By nesting and composing components, you can build more complex user interfaces while maintaining a modular and organized codebase. This approach facilitates code reuse, enhances readability, and simplifies the development and maintenance of your React applications.
+            </div>
+          </div>
+
+          <h2>React components life cicle</h2>
+
+          <div class="row">
+            <div class="col">
+              <p>
+                In React, components have a lifecycle that consists of various phases during which the component is created, updated, and eventually destroyed. However, with the introduction of React 16.3 and later, the traditional lifecycle methods have been somewhat deprecated in favor of the new "React Hooks" API, which provides a more flexible and cohesive way to manage component logic. Here, I'll cover both the traditional lifecycle methods and React Hooks.
+
+                Traditional Lifecycle Methods (React 16.2 and earlier):
+              </p>
+            </div>
+            <div class="col">
+              <p>
+                Mounting Phase:
+                constructor(): Initializes the component, sets up initial state, and binds methods.
+                componentWillMount(): Deprecated, called before the component renders for the first time.
+                render(): Renders the component's UI.
+                componentDidMount(): Invoked after the component is rendered for the first time. Used for side effects like data fetching or interacting with the DOM.
+              </p>
+            </div>
+            <div class="col">
+              <p>
+                Updating Phase:
+                componentWillReceiveProps(nextProps): Deprecated, called when the component receives new props before updating.
+                shouldComponentUpdate(nextProps, nextState): Determines if the component should update, improving performance by preventing unnecessary renders.
+                componentWillUpdate(nextProps, nextState): Deprecated, called before a component updates.
+                render(): Re-renders the component's UI with updated state and props.
+                componentDidUpdate(prevProps, prevState): Invoked after the component updates. Used for side effects after a render.
+              </p>
+            </div>
+            <div class="col">
+              <p>
+                Unmounting Phase:
+                componentWillUnmount(): Invoked before a component is removed from the DOM. Used for cleanup tasks like removing event listeners.
+              </p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <p>
+                React Hooks (React 16.8 and later):
+
+                React Hooks provide a more consistent and streamlined way to manage component lifecycle and state logic within functional components.
+              </p>
+            </div>
+            <div class="col">
+              <p>
+                State Management:
+                useState: Manage component state without using class-based state.
+                useEffect: Perform side effects (data fetching, DOM interaction) in functional components. Similar to componentDidMount and componentDidUpdate.
+                useContext: Access context within functional components.
+              </p>
+              </div>
+            <div class="col">
+              <p>
+                Other Hooks:
+                useReducer: Manage state logic using a reducer function.
+                useCallback and useMemo: Optimize performance by memoizing functions and values.
+                useRef: Get a mutable ref object that persists across renders.
+              </p>
+            </div>
+            <div class="col">
+              <p>
+                With React Hooks, you don't need to worry about the exact lifecycle method to use for different situations. Hooks offer a more unified and intuitive way to manage component behavior, making the code easier to understand and maintain.
+              </p>
+            </div>
+            <div class="col">
+              <p>
+                In summary, while the traditional lifecycle methods are still applicable for React 16.2 and earlier, React Hooks provide a more modern and flexible approach to managing component logic and interactions in functional components. They've become the preferred way to work with components' lifecycle and state management in recent versions of React.
+              </p>
+            </div>
+          </div>
+
+          <h2>React useState</h2>
+
+          <div class="row">
+            <div class="col">
+              <p>
+                useState is a React Hook that allows functional components to manage state without having to use class components. It's part of the React Hooks API introduced in React 16.8, and it enables you to add stateful behavior to your components while still using the simplicity and composability of functional components.
+              </p>
+            </div>
+            <div class="col">
+              <p>
+                Usage:
+
+                To use the useState hook, you import it from the React library and call it within your functional component. It returns an array with two elements: the current state value and a function to update that state value.
+              </p>
+            </div>
+            <div class="col">
+              <p>
+                Here's the basic syntax:
+              </p>
+              <div class="code">
+                <!-- import React, { useState } from "react";
+
+                function Counter() {
+                  // Declare a state variable named 'count' with initial value 0
+                  const [count, setCount] = useState(0);
+                
+                  return (
+                    <div>
+                      <p>Count: {count}</p>
+                      <button onClick={() => setCount(count + 1)}>Increment</button>
+                    </div>
+                  );
+                }
+                
+                export default Counter; -->
+              </div>
+            </div>
+            <div class="col">
+              <p>
+                In this example, the useState hook is used to create a state variable named count with an initial value of 0. The setCount function returned by useState is used to update the count state. When the button is clicked, the count state is incremented by 1.
+              </p>
+            </div>
+            <div class="col">
+              <p>
+                Key Points:
+              </p>
+              <ul>
+                <li>    You can use useState multiple times in a single component to manage different pieces of state.</li>
+                <li>    The argument passed to useState is the initial value of the state.</li>
+                <li>    The state variables managed by useState are independent and do not affect each other.</li>
+                <li>    The state updates performed using the state setter function (setCount in this example) are asynchronous. React batches multiple state updates together for better performance.</li>
+              </ul>
+            </div>
+            <div class="col">
+              <p>
+                useState is a fundamental hook that allows you to add state management to your functional components. It's essential for building dynamic and interactive user interfaces in React without the need for class-based components and the associated lifecycle methods.
+              </p>
+            </div>
+          </div>
+
+          <h2>React useEffect</h2>
+
+          <div class="row">
+            <div class="col">
+              <p>
+                useEffect is a React Hook that allows you to perform side effects in functional components. It's one of the most widely used hooks and enables you to handle various scenarios such as data fetching, DOM manipulation, and subscriptions. The useEffect hook replaces the functionality of lifecycle methods like componentDidMount, componentDidUpdate, and componentWillUnmount.
+              </p>
+            </div>
+            <div class="col">
+              <p>
+                Usage:
+
+                To use the useEffect hook, you import it from the React library and call it within your functional component. It takes two arguments: a function that contains the side effect code and an optional array of dependencies. The function will be executed after every render if the dependencies have changed.
+              </p>
+            </div>
+            <div class="col">
+              <p>
+                Here's the basic syntax:
+              </p>
+              <div class="code">
+                <!-- import React, { useState, useEffect } from "react";
+
+                function DataFetching() {
+                  const [data, setData] = useState(null);
+
+                  useEffect(() => {
+                    // Fetch data or perform side effect here
+                    // Update the 'data' state using setData
+                    // This function will run after every render
+
+                    // Return a cleanup function if needed (componentWillUnmount)
+                    return () => {
+                      // Cleanup logic here
+                    };
+                  }, []); // Pass an empty array for no dependencies
+
+                  return <div>{data ? <p>Data: {data}</p> : <p>Loading...</p>}</div>;
+                }
+
+                export default DataFetching;
+                -->
+              </div>
+            </div>
+            <div class="col">
+              <p>
+                In this example:
+
+                The useEffect hook is used to fetch data or perform a side effect. It runs after every render, but in this case, it only runs once because an empty array [] is passed as the dependency list.
+                If you want the effect to run whenever a specific piece of state changes, you can include that state in the dependency array. For example, passing [count] would make the effect run whenever the count state changes.
+              </p>
+            </div>
+            <div class="col">
+              <p>
+                Cleanup:
+
+                If your effect requires cleanup (similar to componentWillUnmount), you can return a cleanup function from the effect. This function will be executed when the component unmounts or when the dependencies change and the effect needs to be re-run.
+              </p>
+            </div>
+            <div class="col">
+              <p>
+                Note: If you don't provide a dependency array, the effect will run after every render, including the initial render. Providing an empty dependency array ensures the effect runs only once after the initial render.
+              </p>
+            </div>
+            <div class="col">
+              <p>
+                Common Use Cases:
+              </p>
+              <ul>
+                <li>Data fetching with APIs.</li>
+                <li>DOM manipulation.</li>
+                <li>Subscriptions and event listeners.</li>
+                <li>Updating document titles.</li>
+                <li>Managing animations and timers.</li>
+              </ul>
+            </div>
+            <div class="col">
+              <p>
+                useEffect is a powerful tool for handling side effects in functional components, making your code cleaner and more readable by centralizing side effect logic within your components.
+              </p>
+            </div>
+
+          </div>
+
+        </section>
       </main>
+
       <footer>
         <p>Triossi Edoardo - A.A. 2022/2023</p>
       </footer>

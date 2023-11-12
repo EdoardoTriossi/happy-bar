@@ -951,6 +951,13 @@ const HappyBar = {
     deleteDish(name) {
       delete this.order[name];
     },
+    doOrder() {
+      this.order = {};
+    },
+    anyDish() {
+      if (Object.entries(this.order).length > 0) return true;
+      else return false;
+    },
   },
   mounted() {
     var p = document.getElementById("cart");
@@ -1077,6 +1084,15 @@ const HappyBar = {
             </tbody>
           </table>
           <p>Totale:{{getTotalOrder()}}€</p>
+          <button
+            @click="doOrder()"
+            type="button"
+            class="btn btn-danger"
+            data-bs-dismiss="offcanvas"
+            v-show="anyDish()"
+          >
+            Ordinare
+          </button>
         </div>
       </div>
   `,

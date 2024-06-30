@@ -1121,29 +1121,63 @@ const About = {
     </div>
   <!-- Application start -->
 
-  <section class="document">
-    <h1>React</h1>
-    <p>
-      Caratteristiche principali del framework con un occhio di riguardo alle
-      differenze con Vue.js
-    </p>
-    <h1>Problemi comuni</h1>
-    <p>
-      Alcuni dei problemi comuni a chi inizia ad usare React e che in qualche
-      caso ho anche sperimentato
-    </p>
-    <h1>Lista di ristoranti e relativi menu</h1>
-    <p>
-      Leggendo il file json contenente una lista di ristoranti e relativi menu
-      ed utilizzando bootstrap, ho visualizzato i dati utilizzando un
-      accordion e tabelle per rappresentare la gerarchia delle informazioni.
-    </p>
-    <h1>Visualizzazione Menu e gestione ordine con carrello</h1>
-    <p>
-      Manipolazione dei dati presenti nel carrello delle ordinazioni mediante
-      selezione dei prodotti da menu e modifica delle quantità nel carrello
-      stesso.
-    </p>
+  <section>
+    <h1 id="happy-bar">Happy Bar</h1>
+    <p>Creare un progetto web che:</p>
+    <ul>
+      <li>realizzi una Single Page application utilizzando vue.js con CDN</li>
+      <li>descriva il framework per applicazioni web React.js</li>
+    </ul>
+    <p>Il progetto verrà creato a partire dalle cinque pagine realizzate separatamente e poi assemblare in una SPA.
+      In questo modo ho voluto ridurre la complessità di scrivere codice all&#39;interno di un template di un componente vue.js
+      senza il supporto offerto dagli editor allo sviluppo web.</p>
+    <h2 id="react-js">React.js</h2>
+    <p>Pagina principale dell&#39;applicazione in cui descrivo il funzionamento in genrale di React.
+      Questo studio ha anche portato alla creazione di questa <a href="https://github.com/EdoardoTriossi/progetto-web">applicazione React</a> che realizza un sistema di gestione comande lato cliente e cucina simile a quello che ora ho realizzato con Vue.js</p>
+    <h2 id="issues">Issues</h2>
+    <p>Seconda pagina dell&#39;applicazione in cui vengono elencati e spiegati i problemi che sono emersi nella creazione dell&#39;applicazione scritta con React.</p>
+    <h2 id="lettura-e-visualizzazione-file-json-restaurants-">Lettura e visualizzazione file json (restaurants)</h2>
+    <p>Questa pagina visualizza il finto listino dei piatti di alcuni ristoranti di New York utilizzando <a href="https://getbootstrap.com/docs/5.0/components/accordion/">accordion</a> e <a href="https://getbootstrap.com/docs/5.0/content/tables/">tabelle</a> Bootstrap
+      Alcuni di questi ristoranti non hanno dati sugli affettivi piatti e quindi è solo indicato il nome ed il fatto che non siano disponibili i dati</p>
+    <h2 id="sistema-per-gestione-comande-happy-bar-customer-">Sistema per gestione comande (happy bar customer)</h2>
+    <p>Questa pagina:</p>
+    <ul>
+      <li>visualizzerà il menu di un fastfood</li>
+      <li>il contenuto verrà caricato da un file json</li>
+      <li>Sarà possibile ordinare i vari piatti</li>
+      <li>la comanda sarà caricata sul carrello che apparirà utilizzando un <a href="https://getbootstrap.com/docs/5.0/components/offcanvas/">offcanvas</a> boostrap.</li>
+      <li>all&#39;interno del carrello il cliente potrà:
+        <ul>
+          <li>variare le quantità dei piatti scelti</li>
+          <li>cancellare il piatto</li>
+          <li>inviare la comanda</li>
+        </ul>
+      </li>
+    </ul>
+    <p>Quindi in questa pagina sarà possibile modificare i dati della comanda</p>
+    <h2 id="about">About</h2>
+    <p>Questa pagina conterrà queste spiegazioni sul progetto.</p>
+    <h2 id="piano-di-lavoro">Piano di lavoro</h2>
+    <ul>
+      <li>Creare l&#39;applicazione statica con html e css.</li>
+      <li>Utilizzare vue per rendere dinamica la pagina dei restaurant caricando le informazioni dal file json.</li>
+      <li>Implementare la pagina di gestione comande denominata happy bar che permetta di ordinare nuovi piatti per la comanda.</li>
+      <li>Utilizzare una offcanvas per la realizzazione del carrello per permette di cambiare le quantità dei piatti ordinati, cancellare i piatti non più richiesti e inviare la comanda.</li>
+      <li>Completare le prime due pagine descrivendo react e i problemi che ho avuto usando html e css.</li>
+      <li>Creare la Single page application spostando il codice in index.js.</li>
+    </ul>
+    <h2 id="appendice">Appendice</h2>
+    <p>Per realizzare questa SPA ho utilizzato:</p>
+    <ul>
+      <li><a href="https://vuejs.org/">vue.js</a></li>
+      <li><a href="https://vuejs.org/guide/quick-start.html#using-vue-from-cdn">CDN</a></li>
+      <li><a href="https://getbootstrap.com/">Bootstrap</a></li>
+      <li><a href="https://router.vuejs.org/">Router</a></li>
+      <li><a href="https://www.w3schools.com/Css/">CSS</a></li>
+      <li><a href="https://www.bing.com/images/create?toWww=1&amp;redig=04EB1C13624D420C8E8A6467A9E63786">Microsoft creazione immagini</a></li>
+      <li>file json contenente listini di alcuni ristoranti New York</li>
+      <li>file json contenente piatti di un fastfood immaginario</li>
+    </ul>
   </section>
 `,
   methods: {},

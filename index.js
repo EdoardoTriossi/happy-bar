@@ -884,24 +884,27 @@ const Restaurants = {
           <div v-for="(item, j) in menu.entries.items" :key="j">
             <div v-for="(subMenu, k) in item.entries.items" :key="k">
               <h1>{{subMenu.name}}</h1>
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Description</th>
-                    <th scope="col">Price</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr v-for="(dish, f) in subMenu.entries.items" :key="f">
-                    <th scope="row">{{f+1}}</th>
-                    <td>{{dish.name}}</td>
-                    <td>{{dish.description}}</td>
-                    <td>{{dish.price}}</td>
-                  </tr>
-                </tbody>
-              </table>
+                <div v-if="subMenu.entries.count">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Price</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr v-for="(dish, f) in subMenu.entries.items" :key="f">
+                        <th scope="row">{{f+1}}</th>
+                        <td>{{dish.name}}</td>
+                        <td>{{dish.description}}</td>
+                        <td>{{dish.price}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div v-else><h3>Menu non disponibile</h3></div>
             </div>
           </div>
         </div>

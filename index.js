@@ -37,13 +37,13 @@ const React = {
     <div class="col">
       <p>
         La Nascita di React e i suoi concetti chiave: React é nato per il bisogno di semplificare il processo di sviluppo di user interfaces complesse. React intoduce il concetto dei componenti riutilizzabili,
-        permettendo ai sviluppatori di dividere la user interface in pezzi piú piccoli e maneggevoli. Il Virtual DOM (Document Object Model) é stata un'altra innovazione cruciale, permettendo a React di
-        aggiornare efficentemente solamente le parti necessarie di una pagina web quando i dati cambiano, cosí minimizzando il bisogno di ricare l'intera pagina.
+        permettendo agli sviluppatori di dividere la user interface in pezzi piú piccoli e maneggevoli. Il Virtual DOM (Document Object Model) é stata un'altra innovazione cruciale, permettendo a React di
+        aggiornare efficentemente solamente le parti necessarie di una pagina web quando i dati cambiano, cosí minimizzando il bisogno di ricaricare l'intera pagina.
       </p>
     </div>
     <div class="col">
       <p>
-        Sviluppo dichiarativo(Declarative) e Component-Based: Uno dei principi fondamentali di React é la sua natura dichiarativo. Gli sviluppatori decrivono come l'UI dovrebbe essere in in qualunque momento,
+        Sviluppo dichiarativo(Declarative) e Component-Based: Uno dei principi fondamentali di React é la sua natura dichiarativa. Gli sviluppatori decrivono come l'UI dovrebbe essere in in qualunque momento,
         React si prende cura di aggiornare la UI che corrisponde allo stato desiderato. Questo approccio semplifica lo sviluppo astraendo le complessitá della monipolazione manuale del DOM.
       </p>
     </div>
@@ -103,7 +103,7 @@ const React = {
     </div>
     <div class="col">
       <p>
-        Elementi JSX devono avere un singolo elemento root. Non puoi avere piú elementi root nello stesso lovello. Attributi HTML sono creati usando camelCase invece di kebab-case (e.g., className invece di
+        Elementi JSX devono avere un singolo elemento root. Non puoi avere piú elementi root nello stesso livello. Attributi HTML sono creati usando camelCase invece di kebab-case (e.g., className invece di
         class-name). Si possono scrivere espressioni JavaScript tra parentesi graffe {}.
       </p>
     </div>
@@ -155,7 +155,7 @@ const React = {
     </div>
     <div class="col">
       <p>
-        Ricordiamo che JSX necessita di essere compilato prima che venga usato nel browser. Questa compilazione vienen normalmente gestita da strumenti come Babel, questi convertono JSX in codice JavaScript
+        Ricordiamo che JSX necessita di essere compilato prima che venga usato nel browser. Questa compilazione viene normalmente gestita da strumenti come Babel, questi convertono JSX in codice JavaScript
         standard che il browser puó capire. A conti fatti, JSX semplifica il processo di creare e gestire interfacce utente in React permettendo agli sviluppatori di esprimenre elementi della UI in maniera piú
         naturale dentro il loro codice JavaScript.
       </p>
@@ -278,7 +278,7 @@ const React = {
     </div>
   </div>
 
-  <h2>React, come ci compongono i componenti.</h2>
+  <h2>React, come si assemblano i componenti.</h2>
 
   <div class="row">
     <div class="col">
@@ -307,7 +307,7 @@ const React = {
     </div>
     <div class="col">
       <p>
-        Esempio di composizione di componenti: Illustriamo il processo con un semplice esempio. Supponendo di avere un componente User che visualizza informazioni sll'utente e un componente UserProfile che usa il
+        Esempio di uso dei componenti: Illustriamo il processo con un semplice esempio. Supponendo di avere un componente User che visualizza informazioni sull'utente e un componente UserProfile che usa il
         componente User per visualizzare altri profili.
       </p>
     </div>
@@ -495,7 +495,7 @@ const React = {
     </div>
     <div class="col">
       <p>
-        useState é un hook fondamentale che permette di aggiungere la gestione dello stato ai componenti della funzione. E' essenziale per costruire interfavve utente dinamiche e interattive senza il bisogno di
+        useState é un hook fondamentale che permette di aggiungere la gestione dello stato ai componenti della funzione. E' essenziale per costruire interfacce utente dinamiche e interattive senza il bisogno di
         componenti class-based e i cicli di vita a loro associati.
       </p>
     </div>
